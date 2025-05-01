@@ -1,0 +1,70 @@
+# config/swagger.yaml
+openapi: 3.0.0
+info:
+  title: Token Balance API
+  version: 1.0.0
+  description: API for checking ERC-20 token balances
+servers:
+  - url: http://localhost:8081
+    description: Development server
+tags:
+  - name: Balance
+    description: Token balance operations
+  - name: Health
+    description: Health check endpoints
+paths:
+  /balance:
+    get:
+      tags: [Balance]
+      summary: Get token balance
+      description: Returns the token balance for specified address
+      parameters:
+        - in: query
+          name: address
+          schema:
+            type: string
+          required: true
+          example: "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"
+          description: Ethereum address to check
+      responses:
+        200:
+          description: Balance information
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  address:
+                    type: string
+                  balance:
+                    type: string
+                  tokenSymbol:
+                    type: string
+                  tokenAddress:
+                    type: string
+              example:
+                address: "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"
+                balance: "100.0"
+                tokenSymbol: "TKN"
+                tokenAddress: "0x5FbDB2315678afecb367f032d93F642f64180aa3"
+        400:
+          description: Bad request
+        500:
+          description: Server error
+  /health:
+    get:
+      tags: [Health]
+      summary: Health check
+      description: Check if API is running
+      responses:
+        200:
+          description: API is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+              example:
+                status: "healthy"

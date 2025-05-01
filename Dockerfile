@@ -28,6 +28,7 @@ COPY --from=builder /app/package.json .
 COPY --from=builder /app/api ./api
 COPY --from=builder /app/scripts ./scripts
 COPY --from=builder /app/hardhat.config.js .
+COPY --from=builder /app/config ./config 
 
 # Install additional runtime dependencies if needed
 RUN npm install -g wait-port
@@ -37,7 +38,7 @@ EXPOSE 8545 8081
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
-    CMD curl -f http://localhost:8081/health || exit 1
+    CMD curl -f http://localhost:8001/health || exit 1
 
 # Entrypoint script
 COPY entrypoint.sh .
