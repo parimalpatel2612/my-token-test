@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  token-api:
+    build: .
+    ports:
+      - "8545:8545"  # Hardhat JSON-RPC
+      - "8081:8081"  # API server
+    volumes:
+      - ./contracts:/app/contracts
+      - ./scripts:/app/scripts
+      - ./api:/app/api
+    environment:
+      - RPC_URL=http://localhost:8545
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8081/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
