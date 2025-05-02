@@ -35,7 +35,7 @@ API Docs: http://localhost:3000/api-docs
 ## Sample Request:
     http://localhost:8081/balance?address=0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
 
-###c2. Docker Setup (Recommended)
+### 2. Docker Setup (Recommended)
     Prerequisites
 
     > Docker Desktop
