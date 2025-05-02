@@ -20,15 +20,15 @@ npm install# my-token-test
 
 ## Running the Services
 1. Start Hardhat node (Terminal 1):
-    ```bash
+    
     npx hardhat node
 2. Deploy contracts (Terminal 2):
-   ```bash
+   
     npx hardhat run scripts/deploy.js --network localhost
 3. Start API server (Terminal 3):
-   ```bash
+   
    node api/index.js
-   ```
+   
 ## Access Endpoints
 API Docs: http://localhost:3000/api-docs
 
