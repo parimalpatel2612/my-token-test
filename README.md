@@ -26,9 +26,9 @@ npm install# my-token-test
    
     npx hardhat run scripts/deploy.js --network localhost
 3. Start API server (Terminal 3):
-   
+  
    node api/index.js
-   
+```
 ## Access Endpoints
 API Docs: http://localhost:3000/api-docs
 
