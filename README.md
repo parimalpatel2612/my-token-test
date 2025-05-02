@@ -42,14 +42,13 @@ API Docs: http://localhost:3000/api-docs
     > Docker Compose
 
 ## Quick Start
-    ```bash
-
+    
     https://github.com/parimalpatel2612/my-token-test
     cd my-token-test
     
     # Build and start containers
     docker-compose up --build
-    ```
+
 ## Access Services
     Hardhat Node: http://localhost:8545
 
@@ -57,7 +56,7 @@ API Docs: http://localhost:3000/api-docs
 
     Health Check: http://localhost:8081/health
 
-# Project Structure
+## Project Structure
 
         my-token-test/
     ├── api/               # API server code
