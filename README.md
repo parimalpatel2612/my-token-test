@@ -28,7 +28,7 @@ npm install# my-token-test
 3. Start API server (Terminal 3):
    ```bash
    node api/index.js
-```
+   ```
 ## Access Endpoints
 API Docs: http://localhost:3000/api-docs
 
@@ -41,10 +41,12 @@ API Docs: http://localhost:3000/api-docs
     > Docker Desktop
     > Docker Compose
 
-# Quick Start
+## Quick Start
     ```bash
+
     https://github.com/parimalpatel2612/my-token-test
     cd my-token-test
+    
     # Build and start containers
     docker-compose up --build
     ```
